@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+<h2>Add a new delicious coffee</h2>
+<form action="#" th:action="@{/products}" th:object="${product}" method="POST">
+  <div>
+    <label th:for="name">Coffee Name:</label>
+    <input type="text" th:field="*{name}" />
+  </div>
+  <div>
+    <label th:for="price">Price:</label>
+    <input type="text" th:field="*{price}" />
+  </div>
+  <div>
+    <label th:for="caffeineRating">Caffeine Rating:</label>
+    <input type="number" th:field="*{caffeineRating}" />
+  </div>
+  <div>
+    <label th:for="description">Description:</label>
+    <input type="text" th:field="*{description}" />
+  </div>
+
+
+  <div>
+    <input type="submit" value="Add new coffee"/>
+  </div>
+</form>
+</body>
+</html>

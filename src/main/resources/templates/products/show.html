@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/main.css">
+  <title>Show</title>
+
+</head>
+<body>
+<div th:object="${product}">
+  <h1 th:text="*{name}"></h1>
+  <p class="price" th:text="*{price}"></p>
+<!--  <p class="caffeineRating" th:text="*{caffeineRating}"></p>-->
+  <p th:class="'caffeine-rating-' + ${product.caffeineRating}" th:text="*{caffeineRating}"></p>
+  <p class="description" th:text="*{description}"></p>
+</div>
+<a th:href="'/products'">Return to all products</a>
+</body>
+
+<!--<dd th:class="'caffeine-rating-' + ${product.caffeineRating}" th:text="*{caffeineRating}"></dd>-->
+</html>

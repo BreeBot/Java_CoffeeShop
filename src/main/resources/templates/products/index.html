@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/main.css">
+  <title>Product</title>
+</head>
+<body>
+<h1>All Products!</h1>
+<div class="products" th:each="product:${products}">
+  <div class="product" th:object="${product}">
+    <a th:href="'/products/show/' + *{id}">
+      <h2 th:text="*{name}"></h2>
+    </a>
+    <dl>
+      <dt>Price</dt>
+      <dd th:text="*{price}"></dd>
+      <dt>Caffeine Rating (Octane level)</dt>
+      <dd th:class="'caffeine-rating-' + ${product.caffeineRating}" th:text="*{caffeineRating}"></dd>
+    </dl>
+  </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
